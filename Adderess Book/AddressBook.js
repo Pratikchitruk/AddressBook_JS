@@ -40,5 +40,10 @@ class Contact {
             ", City : " + this.city + ", State : " + this.state + ", Zip : " + this.zip + ", Phone No : " + this.phoneNo + ", Email : " + this.email;
     }
 }
+try {
     let contact = new Contact("Pratik", "Chitruk", "budhwar peth", "Kolhapur", "Maharashtra", "416002", "8208508814", "pratikchitruk@gmail.com");
-console.log(contact.toString());
+    console.log(contact.toString());
+} catch (e) {
+    console.error(e)
+}
+    
