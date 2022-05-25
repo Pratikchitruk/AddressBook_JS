@@ -40,10 +40,16 @@ class Contact {
             ", City : " + this.city + ", State : " + this.state + ", Zip : " + this.zip + ", Phone No : " + this.phoneNo + ", Email : " + this.email;
     }
 }
+
+let addressBookArr = new Array();
 try {
-    let contact = new Contact("Pratik", "Chitruk", "budhwar peth", "Kolhapur", "Maharashtra", "416002", "8208508814", "pratikchitruk@gmail.com");
-    console.log(contact.toString());
+    addressBookArr.push(new Contact("Pratik", "Chitruk", "budhwar peth", "Kolhapur", "Maharashtra", "416002", "8208508814", "pratikchitruk@gmail.com"));
+} catch (e) {
+    console.error(e);
+}
+try {
+    addressBookArr.push(new Contact("Omkar", "shinde", "maglvar peth", "Kolhapur", "Maharashtra", "416002", "8484887759", "oshinde@gmail.com"));
 } catch (e) {
     console.error(e)
 }
-    
+console.log(addressBookArr);
