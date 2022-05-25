@@ -42,14 +42,55 @@ class Contact {
 }
 
 let addressBookArr = new Array();
+
+function contactExists(fName, lName) {
+    return addressBookArr.some(u => u.firstName == fName && u.lastName == lName);
+}
+
+function editContact(fName, lName, property, value) {
+    if (contactExists(fName, lName)) {
+        switch (property) {
+            case "address":
+                addressBookArr.find((contact) => contact.firstName == fName).address = value;
+                break;
+            case "city":
+                addressBookArr.find((contact) => contact.firstName == fName).city = value;
+                break;
+            case "state":
+                addressBookArr.find((contact) => contact.firstName == fName).state = value;
+                break;
+            case "zip":
+                addressBookArr.find((contact) => contact.firstName == fName).zip = value;
+                break;
+            case "phone":
+                addressBookArr.find((contact) => contact.firstName == fName).phoneNo = value;
+                break;
+            case "email":
+                addressBookArr.find((contact) => contact.firstName == fName).email = value;
+                break;
+            default:
+                console.log("Enter valid Property");
+        }
+    } else {
+        console.log("Contact Does Not Exist");
+    }
+}
+
+
 try {
     addressBookArr.push(new Contact("Pratik", "Chitruk", "budhwar peth", "Kolhapur", "Maharashtra", "416002", "8208508814", "pratikchitruk@gmail.com"));
 } catch (e) {
     console.error(e);
 }
 try {
-    addressBookArr.push(new Contact("Omkar", "shinde", "maglvar peth", "Kolhapur", "Maharashtra", "416002", "8484887759", "oshinde@gmail.com"));
+    addressBookArr.push(new Contact("Omkar", "shinde", "Manglwar peth", "Kolhapur", "Maharashtra", "416002", "91 8989898989", "opatil@gmail.com"));
 } catch (e) {
     console.error(e)
 }
 console.log(addressBookArr);
+console.log("-----------------------")
+console.log("Contact edited")
+editContact("omkar", "shinde", "address", "kolhapur")
+console.log(addressBookArr);
+
+    
